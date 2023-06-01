@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Client</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: inline-block;
+            width: 120px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            margin-top: 10px;
+            padding: 8px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #home__button {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #home__button a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        #home__button a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1>Add Client</h1>
+
+
+<form action="#" th:action="@{/clients/add}" th:object="${client}" method="post">
+
+<!--    <label for="id">ID:</label>-->
+<!--    <input type="number" id="id" name="id" th:field="*{id}"/><br>-->
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="surname">Surname:</label>
+    <input type="text" id="surname" name="surname" required><br>
+
+    <label for="fatherName">Father's Name:</label>
+    <input type="text" id="fatherName" name="fatherName" required><br>
+
+    <label for="dateOfBirth">Date of Birth:</label>
+    <input type="date" id="dateOfBirth" name="dateOfBirth" required><br>
+
+    <label for="idAgent">Agent id:</label>
+    <input type="text" id="idAgent" name="idAgent" required><br>
+
+    <label for="dateOfInsurance">Date of Insurance:</label>
+    <input type="date" id="dateOfInsurance" name="dateOfInsurance" placeholder="YYYY-MM-DD" required><br>
+
+    <label for="durationOfInsurance">Duration of Insurance:</label>
+    <input type="number" id="durationOfInsurance" name="durationOfInsurance" required><br>
+
+    <input type="submit" value="Add">
+</form>
+<span id="home__button"><a href="http://localhost:8080/">Home</a></span>
+
+</body>
+</html>

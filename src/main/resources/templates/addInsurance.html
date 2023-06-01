@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Insurance</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: inline-block;
+            width: 120px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            margin-top: 10px;
+            padding: 8px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #home__button {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #home__button a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        #home__button a:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Add Insurance</h1>
+
+<form action="#" th:action="@{/insurances/add}" th:object="${insurance}" method="post">
+<!--    <p>-->
+<!--        <label for="id">ID:</label>-->
+<!--        <input type="text" id="id" name="id" required="required"/>-->
+<!--    </p>-->
+    <p>
+        <label for="sum">Sum:</label>
+        <input type="text" id="sum" name="sum" required="required"/>
+    </p>
+    <p>
+        <label for="agent">Agent ID:</label>
+        <input type="number" id="agent" name="agent" required="required"/>
+    </p>
+
+    <p>
+        <label for="client">Client ID:</label>
+        <input type="number" id="client" name="client" required="required"/>
+    </p>
+    <p>
+        <label for="dateOfInsurance">Date of Insurance:</label>
+        <input type="date" id="dateOfInsurance" name="dateOfInsurance" placeholder="YYYY-MM-DD" required>
+    </p>
+    <p>
+        <label for="durationOfInsurance">Duration of Insurance:</label>
+        <input type="number" id="durationOfInsurance" name="durationOfInsurance" required="required"/>
+    </p>
+    <input type="submit" value="Add Insurance"/>
+</form>
+<span id="home__button"><a href="http://localhost:8080/">Home</a></span>
+</body>
+</html>

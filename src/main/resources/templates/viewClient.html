@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AstaInsurance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #home__button {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .card-body {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 28px;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 16px;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+
+        button[type="submit"] {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0069d9;
+        }
+
+    </style>
+</head>
+<body>
+        <span id="home__button"><a href="http://localhost:8080/">Home</a></span>
+<!-- Вывод всех полей класса Client в виде карточек -->
+        <div class="card-body">
+            <h1 class="card-title" th:text="${client.name + ' ' + client.surname}"></h1>
+            <p class="card-text" th:text="'Date of birth: ' + ${client.dateOfBirth}"></p>
+            <p class="card-text" th:text="'Agent: ' + ${client.idAgent.name} + ' ' + ${client.idAgent.surname}"></p>
+            <p class="card-text" th:text="'Date of insurance: ' + ${client.dateOfInsurance}"></p>
+            <p class="card-text" th:text="'Duration of insurance: ' + ${client.durationOfInsurance}"></p>
+            <form th:action="@{/clients/edit/{id}(id=${client.id})}" method="get"><button type="submit">Edit</button></form>
+            <form th:action="@{/clients/delete/{id}(id=${client.id})}" th:method="post"><button type="submit">Delete</button></form>
+
+        </div>
+
+</body>
+</html>

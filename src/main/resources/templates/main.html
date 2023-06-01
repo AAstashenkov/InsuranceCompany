@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AstaInsurance</title>
+    <style>
+        /* Global styles */
+        body {
+            background-color: #2c3e50;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 0 20px;
+            text-shadow: 2px 2px #000;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 30px 0 15px;
+        }
+
+        h3 {
+            font-size: 18px;
+            line-height: 1.5;
+            margin: 0 0 15px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Main section styles */
+        #main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .main__menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            border: 2px solid #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease-in-out;
+            background-color: transparent;
+            margin-right: 10px;
+        }
+
+        .button:hover,
+        .button:focus {
+            background-color: #fff;
+            color: #2c3e50;
+        }
+
+        .main__info {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .main__infoheader {
+            color: #2c3e50;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .main__subinfo {
+            color: #555;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 16px;
+            }
+
+            .main__menu {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .button {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div id="main">
+    <h1>AstaInsurance</h1>
+    <div class="main__menu">
+        <a href="http://localhost:8080/insurances" class="button" id="Insurances">Insurances</a>
+        <a href="http://localhost:8080/agents" class="button" id="Agents">Agents</a>
+        <a href="http://localhost:8080/clients" class="button" id="Clients">Clients</a>
+        <a href="http://localhost:8080/companies" class="button" id="Companies">Companies</a>
+    </div>
+    <div class="main__info">
+        <h3 class="main__subinfo">Insurance corporations are financial intermediaries which offer direct insurance or reinsurance services,
+            providing financial protection from possible hazards in the future.
+        </h3>
+        <h3 class="main__subinfo">> Under an insurance policy, the insurance corporation undertakes
+            to compensate the policyholder for losses caused by a pre-defined event against a fee, or “premium”.
+        </h3>
+        <h2 class="main__infoheader">Why are they important?</h2>
+        <h3 class="main__subinfo">>Insurance policies are an important cornerstone of many households’ income and wealth in Europe. Insurance corporations also play an important role in financial markets as institutional investors and investment targets. For these reasons,
+            the ECB collects statistical data on the balance sheets and other financial information of insurance corporations for its analyses of the financial system and household wealth.
+        </h3>
+        <h2 class="main__infoheader">Insurance corporation statistics</h2>
+        <h3 class="main__subinfo">>
+            Our insurance corporation statistics combine data on insurance corporations in euro area countries in one harmonised set of statistics.
+            Our statistics show separate information according to the insurance corporations’ operating license. This split results in four reporting sectors: reinsurance, life, non-life and composite insurance. Reinsurance corporations can only engage in (life and non-life) reinsurance business.
+            Composite insurance corporations hold both life and non-life operating licenses.
+        </h3>
+    </div>
+
+</div>
+</body>
+</html>

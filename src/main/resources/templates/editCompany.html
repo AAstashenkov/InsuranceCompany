@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Company</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: inline-block;
+            width: 120px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            margin-top: 10px;
+            padding: 8px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        #home__button {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #home__button a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        #home__button a:hover {
+            background-color: #0056b3;
+        }
+
+        .submit{
+            width: 100%;
+            margin-top: 10px;
+            padding: 8px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit:hover{
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<span id="home__button"><a href="http://localhost:8080/">Home</a></span>
+<h1>Edit Company</h1>
+<form th:object="${company}" method="POST" th:action="@{/companies/edit/{id}(id=${company.id})}">
+    <input type="hidden" th:field="*{id}"/>
+    <div>
+        <label for="number">Number:</label>
+        <input type="text" required id="number" name="number" th:field="*{number}"/>
+    </div>
+
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" required id="name" name="name" th:field="*{name}"/>
+    </div>
+
+    <button type="submit" class="submit">Save</button>
+</form>
+</body>
+</html>
